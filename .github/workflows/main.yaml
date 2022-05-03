@@ -18,10 +18,6 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
-      
-      - name: vr setup
-        if: contains(steps.changed-files.outputs.all_modified_files, 'src/create.ts')
-        uses: jurassiscripts/setup-velociraptor@v2
 
       - name: execute
         if: contains(steps.changed-files.outputs.all_modified_files, 'src/create.ts')
