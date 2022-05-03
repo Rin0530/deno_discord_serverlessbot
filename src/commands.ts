@@ -1,8 +1,8 @@
-import { ApplicationCommand } from "../@types/index.d.ts"
+import { ApplicationCommand, InteractionResponse } from "../@types/index.d.ts"
 
 export function onApplicationCommand(data:ApplicationCommand){
     const  value = data.options?.name;
-    return {
+    const res: InteractionResponse = {
         // Type 4 reponds with the below message retaining the user's
         // input at the top.
         type: 4,
@@ -10,4 +10,5 @@ export function onApplicationCommand(data:ApplicationCommand){
           content: `Hello, ${value}!`,
         },
       }
+    return res;
 }
