@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Hello world action step
+      - name: execute
         if: contains(steps.changed-files.outputs.all_modified_files, 'create.ts')
         uses: ./.github/actions # Uses an action in the root directory
         id: hello

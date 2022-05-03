@@ -11,7 +11,7 @@ const headers = {
 }
 
 const body:GlobalApplicationCommand = {
-    name: "hello",
+    name: "hey",
     description: "Greet a person",
     options: [
         {
