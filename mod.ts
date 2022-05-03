@@ -1,6 +1,6 @@
 import { ENV, json, serve, sign, validateRequest } from "./deps.ts";
 import { ApplicationCommand } from "./@types/index.d.ts"
-
+import { onApplicationCommand } from "./src/commands.ts"
 
 // For all requests to "/" endpoint, we want to invoke home() handler.
 serve({
@@ -45,15 +45,8 @@ async function home(request: Request) {
   // Type 2 in a request is an ApplicationCommand interaction.
   // It implies that a user has issued a command.
   if (data.type === 2) {
-    const  value = data.options?.name;
-    return json({
-      // Type 4 reponds with the below message retaining the user's
-      // input at the top.
-      type: 4,
-      data: {
-        content: `Hello, ${value}!`,
-      },
-    });
+    const  resolve = onApplicationCommand(data);
+    return json(resolve);
   }
 
   // We will return a bad request error as a valid Discord request

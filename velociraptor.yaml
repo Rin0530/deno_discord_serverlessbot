@@ -10,4 +10,4 @@ envFile:
 scripts:
   create:
     desc: Runs main script
-    cmd: create.ts
+    cmd: src/create.ts
