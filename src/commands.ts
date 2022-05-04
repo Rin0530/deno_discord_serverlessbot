@@ -6,7 +6,7 @@ export function onApplicationCommand(data:ApplicationCommand){
   const commandName = data.name;
 
   // オプションを取得
-  const value = data.options?.shift()?.name;
+  const value = data.options?.shift()?.value;
   const res: InteractionResponse = {
       // Type 4 reponds with the below message retaining the user's
       // input at the top.

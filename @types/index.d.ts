@@ -47,7 +47,7 @@ export interface ApplicationCommand{
     name_localizations?: Locales;
     description: string;
     description_localizations?: Locales;
-    options?: ApplicationCommandOption[];
+    options?: ApplicationCommandInteractionDataOption[];
     default_member_permissions?: string;
     dm_permission?: boolean;
     default_permission?: boolean;
@@ -94,11 +94,6 @@ export interface ApplicationCommandOptionChoice{
     value: ApplicationCommandOptionType;
 }
 
-export interface ApplicationCommandInteractionDataOption{
-    name: string;
-    type: number;
-    value?: ApplicationCommandOptionType;
-}
 
 export interface ApplicationCommandInteractionDataOption{
     name: string;
