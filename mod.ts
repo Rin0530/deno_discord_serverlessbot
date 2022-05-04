@@ -45,6 +45,8 @@ async function home(request: Request) {
   // Type 2 in a request is an ApplicationCommand interaction.
   // It implies that a user has issued a command.
   if (data.type === 2) {
+    console.log(data);
+    
     const  resolve = onApplicationCommand(data);
     return json(resolve);
   }
