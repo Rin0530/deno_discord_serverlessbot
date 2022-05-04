@@ -98,7 +98,7 @@ export interface ApplicationCommandOptionChoice{
 export interface ApplicationCommandInteractionDataOption{
     name: string;
     type: number;
-    value?: ApplicationCommandOptionType;
+    value?: string|number;
     options?: ApplicationCommandInteractionDataOption;
     focused?: boolean;
 }
