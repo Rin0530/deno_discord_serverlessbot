@@ -47,7 +47,7 @@ export interface ApplicationCommand{
     name_localizations?: Locales;
     description: string;
     description_localizations?: Locales;
-    options?: ApplicationCommandOption;
+    options?: ApplicationCommandOption[];
     default_member_permissions?: string;
     dm_permission?: boolean;
     default_permission?: boolean;
