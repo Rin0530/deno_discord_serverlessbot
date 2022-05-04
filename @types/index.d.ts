@@ -112,16 +112,22 @@ export interface Interaction{
     id: bigint;
     application_id: bigint;
     type: InteractionType;
-    data?: InteractionType;
     guild_id: bigint;
     channel_id?: bigint;
     member?: Member;
     user?: User;
     token: string;
     version: string;
-    message?: Message;
     locale?: string;
     guild_locale?: string
+}
+
+export interface ApplicationCommandInteraction extends Interaction{
+    data: ApplicationCommand;
+}
+
+export interface MessageComponentInteraction extends Interaction{
+    message: Message;
 }
 
 export interface InteractionData{
@@ -524,3 +530,5 @@ export interface GlobalApplicationCommand{
     default_permission?: boolean;
     type?: ApplicationCommandType;
 }
+
+

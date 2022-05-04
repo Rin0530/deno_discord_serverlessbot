@@ -1,6 +1,7 @@
 import { ENV, json, serve, sign, validateRequest } from "./deps.ts";
-import { ApplicationCommand } from "./@types/index.d.ts"
+import { Interaction } from "./@types/index.d.ts"
 import { onApplicationCommand } from "./src/commands.ts"
+import { isCommand } from "./util.ts"
 
 // For all requests to "/" endpoint, we want to invoke home() handler.
 serve({
@@ -33,10 +34,10 @@ async function home(request: Request) {
     );
   }
 
-  const data:ApplicationCommand = JSON.parse(body);
+  const interaction:Interaction = JSON.parse(body);
   // Discord performs Ping interactions to test our application.
   // Type 1 in a request implies a Ping interaction.
-  if (data.type === 1) {
+  if (interaction.type === 1) {
     return json({
       type: 1, // Type 1 in a response is a Pong interaction response type.
     });
@@ -44,10 +45,8 @@ async function home(request: Request) {
 
   // Type 2 in a request is an ApplicationCommand interaction.
   // It implies that a user has issued a command.
-  if (data.type === 2) {
-    console.log(data);
-    
-    const  resolve = onApplicationCommand(data);
+  if (isCommand(interaction)) {
+    const  resolve = onApplicationCommand(interaction.data);
     return json(resolve);
   }
 
