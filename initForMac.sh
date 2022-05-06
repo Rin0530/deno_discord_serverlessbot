@@ -21,6 +21,6 @@ echo export PATH="$HOME/.deno/bin:$PATH" >> $rc
 
 $deno_path install -qAn vr https://deno.land/x/velociraptor@1.0.1/cli.ts > /dev/null 2>&1
 echo BOT_TOKEN="REPLACE YOUR TOKEN" >> env
-echo CLIENT_ID="REPLACE YOUR ID" >> env
+echo Application_ID="REPLACE YOUR ID" >> env
 
 echo "please execution 'source $rc'"

@@ -2,9 +2,9 @@ import { ENV, KY } from "../deps.ts"
 import { GlobalApplicationCommand } from "../@types/index.d.ts"
 
 const BOT_TOKEN = ENV.require("BOT_TOKEN")
-const CLIENT_ID = ENV.require("CLIENT_ID")
+const Application_ID = ENV.require("Application_ID")
 
-const url = `https://discord.com/api/v8/applications/${CLIENT_ID}/commands`;
+const url = `https://discord.com/api/v8/applications/${Application_ID}/commands`;
 
 const headers = {
     Authorization: `Bot ${BOT_TOKEN}`
