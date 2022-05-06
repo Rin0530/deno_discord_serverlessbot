@@ -8,9 +8,9 @@ else
 fi
 
 
-if test $SHELL = "/bin/bash" ; then
+if test $SHELL=/bin/bash ; then
     rc=~/.bashrc
-elif test $SHELL = "/bin/zsh" ; then
+elif test $SHELL=/bin/zsh ; then
     rc=~/.zshrc
 else 
     rc=~/.profile
