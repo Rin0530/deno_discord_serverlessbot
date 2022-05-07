@@ -158,7 +158,7 @@ export interface MessageInteraction{
 
 export interface InteractionResponse{
     type: InteractionCallbackType;
-    data?: MessageInteractionCallback|Autocomplete|Modal;
+    data?: MessageInteractionCallback;
 }
 
 export interface MessageInteractionCallback {
