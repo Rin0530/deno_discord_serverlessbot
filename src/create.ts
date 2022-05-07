@@ -1,5 +1,6 @@
 import { ENV, KY } from "../deps.ts"
 import { GlobalApplicationCommand } from "../@types/index.d.ts"
+import { ApplicationCommandOptionType } from "../@types/types.ts"
 
 const BOT_TOKEN = ENV.require("BOT_TOKEN")
 const Application_ID = ENV.require("Application_ID")
@@ -17,12 +18,21 @@ const body:GlobalApplicationCommand = {
         {
             name: "name",
             description: "The name of the person",
-            type: 3,
+            type: ApplicationCommandOptionType.STRING,
             required: true
         }
     ]
 }
 
-const parsed = await KY.post(url, {headers:headers, json: body }).json()
+try {
+    await KY.post(url, {headers:headers, json: body }).json()
+} catch (e) {
+    console.log("error");
+    console.error(e)
+}
 
-console.log(JSON.stringify(parsed,null,2));
+console.log("success");
+
+//const parsed = await KY.post(url, {headers:headers, json: body }).json()
+//
+//console.log(JSON.stringify(parsed,null,2));

@@ -1,7 +1,7 @@
 import { 
     InteractionType,
     ComponentTypes
- } from "./@types/enums.d.ts"
+ } from "./@types/types.ts"
 import { 
     ActionRows,
     ApplicationCommandInteraction,

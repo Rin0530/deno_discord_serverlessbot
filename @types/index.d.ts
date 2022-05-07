@@ -13,7 +13,7 @@ import {
     MessageTypes,
     StickerType,
     TextInputStyle,
- } from "./enums.d.ts"
+ } from "./types.ts"
 
 export interface Application{
     id: bigint;
