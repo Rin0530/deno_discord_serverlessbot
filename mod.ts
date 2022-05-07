@@ -1,6 +1,6 @@
 import { ENV, json, serve, sign, validateRequest } from "./deps.ts";
 import { Interaction } from "./@types/index.d.ts"
-import { onApplicationCommand } from "./src/commands.ts"
+import { onApplicationCommand } from "./src/commands/index.ts"
 import { isCommand } from "./util.ts"
 
 // For all requests to "/" endpoint, we want to invoke home() handler.
