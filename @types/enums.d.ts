@@ -55,10 +55,10 @@ export enum InteractionCallbackType{
 }
 
 export enum ComponentTypes{
-    "Action Row" = 1,
+    "ActionRows" = 1,
     "Button" = 2,
-    "Select Menu" = 3,
-    "Text Input" = 4
+    "SelectMenu" = 3,
+    "TextInput" = 4
 }
 
 export enum ButtonStyles{
@@ -75,9 +75,9 @@ export enum TextInputStyle{
 }
 
 export enum AllowedMentionTypes{
-    "Role Mentions" = "roles",
-    "User Mentions" = "users",
-    "Everyone Mentions" = "everyone"
+    "RoleMentions" = "roles",
+    "UserMentions" = "users",
+    "EveryoneMentions" = "everyone"
 }
 
 export enum EmbedTypes{

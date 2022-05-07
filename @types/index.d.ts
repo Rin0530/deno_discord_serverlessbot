@@ -182,7 +182,12 @@ export interface Modal{
 }
 
 export interface MessageComponent{
-    type: number;
+    type: ComponentTypes;
+}
+
+export interface ActionRows extends MessageComponent{
+    type: ComponentTypes;
+    component: MessageComponent;
 }
 
 export interface Buttons extends MessageComponent{
@@ -203,7 +208,7 @@ export interface SelectMenu extends MessageComponent{
     disabled?: boolean;
 }
 
-export interface SelectOptions extends MessageComponent{
+export interface SelectOptions{
     label: string;
     value: string;
     description?: string;
