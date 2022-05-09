@@ -1,4 +1,5 @@
 import { ApplicationCommand, InteractionResponse } from "../../@types/index.d.ts"
+import { InteractionCallbackType } from "../../@types/types.ts"
 
 export function hello(data:ApplicationCommand):InteractionResponse {
     // オプションを取得
@@ -6,7 +7,7 @@ export function hello(data:ApplicationCommand):InteractionResponse {
     const res: InteractionResponse = {
         // Type 4 reponds with the below message retaining the user's
         // input at the top.
-        type: 4,
+        type: InteractionCallbackType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
           content: `Hello, ${value}!`,
         },
