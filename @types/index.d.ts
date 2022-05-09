@@ -55,7 +55,7 @@ export interface ApplicationCommand{
 }
 
 export interface ApplicationCommandOption{
-    type: ApplicationCommandOptionType|number;
+    type: ApplicationCommandOptionType;
     name: string;
     name_localizations?: Locales;
     description: string;
@@ -63,7 +63,7 @@ export interface ApplicationCommandOption{
     required?: boolean;
     choices?: ApplicationCommandOptionChoice[];
     options?: ApplicationCommandOption[];
-    channelTypes?: ChannelType[]|number[];
+    channelTypes?: ChannelType[];
     minvalue?: number;
     maxvalue?: number;
     autocomlete?: boolean;
@@ -77,13 +77,13 @@ export interface ApplicationCommandData{
 }
 
 export interface ApplicationCommandOptionData{
-    type: ApplicationCommandOptionType|number;
+    type: ApplicationCommandOptionType;
     name: string;
     description: string;
     autocomlete?: boolean;
     required?: boolean;
     choices?: ApplicationCommandOptionChoice[];
-    channelTypes?: ChannelType[]|number[];
+    channelTypes?: ChannelType[];
     minvalue?: number;
     maxvalue?: number;
 }
