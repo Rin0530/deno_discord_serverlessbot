@@ -29,6 +29,7 @@ try {
 } catch (e) {
     console.log("error");
     console.error(e)
+    Deno.exit()
 }
 
 console.log("success");
