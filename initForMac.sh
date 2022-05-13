@@ -1,6 +1,6 @@
 #! /bin/bash
 read -s -p "BOT_TOKENを入力してください: " TOKEN
-read -s -p "Application_IDを入力してください: " 18 ID
+read -s -p "Application_IDを入力してください: " ID
 
 brew install deno > /dev/null 2>&1
 ret=$?
