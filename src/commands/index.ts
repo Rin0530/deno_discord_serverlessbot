@@ -1,5 +1,5 @@
 import { ApplicationCommandInteraction, InteractionResponse } from "../../@types/index.d.ts"
-import { hello } from "./hello.ts"
+import { ping } from "./ping.ts"
 
 export function onApplicationCommand(interaction:ApplicationCommandInteraction){
   const data = interaction.data
@@ -9,8 +9,8 @@ export function onApplicationCommand(interaction:ApplicationCommandInteraction){
   let res:InteractionResponse;
   
   switch(commandName){
-    case "hello":
-      res = hello(interaction);
+    case "ping":
+      res = ping(interaction);
       break;
       
     default:
