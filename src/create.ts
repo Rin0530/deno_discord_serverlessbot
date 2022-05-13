@@ -12,16 +12,8 @@ const headers = {
 }
 
 const body:GlobalApplicationCommand = {
-    name: "hello",
-    description: "Greet a person",
-    options: [
-        {
-            name: "name",
-            description: "The name of the person",
-            type: ApplicationCommandOptionType.STRING,
-            required: true
-        }
-    ]
+    name: "ping",
+    description: "Response pong!",
 }
 
 try {
