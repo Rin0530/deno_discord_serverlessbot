@@ -118,6 +118,7 @@ export interface Interaction{
 }
 
 export interface ApplicationCommandInteraction extends Interaction{
+    member: Member;
     data: ApplicationCommand;
 }
 

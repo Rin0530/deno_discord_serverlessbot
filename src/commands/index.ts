@@ -1,7 +1,8 @@
-import { ApplicationCommand, InteractionResponse } from "../../@types/index.d.ts"
+import { ApplicationCommandInteraction, InteractionResponse } from "../../@types/index.d.ts"
 import { hello } from "./hello.ts"
 
-export function onApplicationCommand(data:ApplicationCommand){
+export function onApplicationCommand(interaction:ApplicationCommandInteraction){
+  const data = interaction.data
   // 実行されたコマンド名
   // コマンドが増えた場合はこれで分岐すれば良い
   const commandName = data.name;
@@ -9,7 +10,7 @@ export function onApplicationCommand(data:ApplicationCommand){
   
   switch(commandName){
     case "hello":
-      res = hello(data);
+      res = hello(interaction);
       break;
       
     default:
