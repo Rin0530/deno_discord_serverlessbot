@@ -2,6 +2,8 @@
 read -s -p "BOT_TOKENを入力してください: " TOKEN
 read -s -p "Application_IDを入力してください: " ID
 
+echo 必要なもののダウンロードを開始します
+
 brew install deno > /dev/null 2>&1
 ret=$?
 if test $ret -ne 0 ; then
