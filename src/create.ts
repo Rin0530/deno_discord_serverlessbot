@@ -24,7 +24,3 @@ try {
 }
 
 console.log("success");
-
-//const parsed = await KY.post(url, {headers:headers, json: body }).json()
-//
-//console.log(JSON.stringify(parsed,null,2));
