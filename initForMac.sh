@@ -44,6 +44,14 @@ cat << EOF > .vscode/setting.json
 }
 EOF
 
+cat << EOF > .vscode/extensions.json
+{
+    "recommendations": [
+        "denoland.vscode-deno"
+    ]
+}
+EOF
+
 $HOME/.deno/bin/vr create
 
 echo "please execution 'source $rc'"

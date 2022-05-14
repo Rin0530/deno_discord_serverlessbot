@@ -11,6 +11,23 @@ powershell -NoProfile -ExecutionPolicy Unrestricted -Command "& { iwr https://de
 if %errorlevel%==0 (
     echo BOT_TOKEN= %BOT_TOKEN% >> env
     echo Application_ID=%Application_ID% >> env
+
+    mkdir .vscode
+    (
+    echo {
+    echo "deno.enable": true,
+    echo "deno.path": "%HOMEPATH%\.deno\bin"
+    echo }
+    )>.vscode\setting.json
+
+    (
+    echo {
+    echo "recommendations": [
+    echo "denoland.vscode-deno"
+    echo ]
+    echo }
+    )>.vscode\extensions.json
+
     %HOMEPATH%\.deno\bin\vr create
 )
 else pause
