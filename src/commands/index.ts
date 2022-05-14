@@ -1,4 +1,5 @@
 import { ApplicationCommandInteraction, InteractionResponse } from "../../@types/index.d.ts"
+import { InteractionCallbackType } from "../../@types/types.ts"
 import { ping } from "./ping.ts"
 
 export function onApplicationCommand(interaction:ApplicationCommandInteraction){
@@ -15,7 +16,7 @@ export function onApplicationCommand(interaction:ApplicationCommandInteraction){
       
     default:
       res = {
-        type:4,
+        type:InteractionCallbackType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
           content:"This command is unimplemented"
         }
