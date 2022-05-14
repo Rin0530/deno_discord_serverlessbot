@@ -9,5 +9,8 @@ jobs:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
     steps: 
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
       - name: execute
         uses: ./
