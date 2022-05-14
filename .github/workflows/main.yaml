@@ -20,5 +20,5 @@ jobs:
         uses: actions/checkout@v3
 
       - name: execute
-        if: contains(steps.changed-files.outputs.all_modified_files, 'src/create.ts')
+        if: env.BOT_TOKEN != null && env.Application_ID != null && contains(steps.changed-files.outputs.all_modified_files, 'src/create.ts')
         uses: ./
