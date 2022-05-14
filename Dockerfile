@@ -5,6 +5,4 @@ COPY ./src/create.ts src/create.ts
 COPY ./deps.ts deps.ts
 COPY ./@types @types
 
-RUN ls
-
 ENTRYPOINT [ "/entrypoint.sh" ]
