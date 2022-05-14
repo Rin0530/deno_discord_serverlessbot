@@ -7,7 +7,7 @@ jobs:
     name: execution create.ts
     env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      Application_ID: ${{ secrets.Application_ID }}
     steps: 
       - uses: actions/checkout@v2
         with:
