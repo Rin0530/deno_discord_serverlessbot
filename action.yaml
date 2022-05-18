@@ -1,6 +1,0 @@
-# action.yml
-name: 'Post command'
-description: 'Execution create.ts'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
