@@ -18,6 +18,7 @@ jobs:
       status: ${{ steps.changed-files.outputs.all_modified_files }}
           
   post-command:
+    needs: check
     runs-on: ubuntu-20.04
     name: execution create.ts
     env:
@@ -25,11 +26,11 @@ jobs:
       Application_ID: ${{ secrets.Application_ID }}
     #if: contains(needs.check.outputs.status, 'src/create.ts')
     steps: 
-      - run: echo ${{ needs.check }}
+      - run: echo ${{ needs.check.outputs.status }}
+      - uses: actions/checkout@master
       - run: |
           echo "BOT_TOKEN=$BOT_TOKEN" >> env
           echo "Application_ID=$Application_ID" >> env
-      - uses: actions/checkout@master
       - uses: denoland/setup-deno@v1
       - uses: jurassiscripts/setup-velociraptor@v1
       - run: |
