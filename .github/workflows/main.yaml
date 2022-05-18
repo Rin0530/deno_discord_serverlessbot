@@ -25,7 +25,7 @@ jobs:
       Application_ID: ${{ secrets.Application_ID }}
     #if: contains(needs.check.outputs.status, 'src/create.ts')
     steps: 
-      - run: echo ${{ fromJSON(needs) }}
+      - run: echo ${{ needs.check }}
       - run: |
           echo "BOT_TOKEN=$BOT_TOKEN" >> env
           echo "Application_ID=$Application_ID" >> env
