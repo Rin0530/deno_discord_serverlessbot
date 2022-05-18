@@ -17,7 +17,7 @@ const body:GlobalApplicationCommand = {
 
 try {
     //await KY.post(url, {headers:headers, json: body }).json()
-    await KY.delete(url).json()
+    await KY.delete(url, {headers:headers}).json()
 } catch (e) {
     console.log("error");
     console.error(e)
