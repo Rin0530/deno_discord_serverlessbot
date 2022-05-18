@@ -23,8 +23,9 @@ jobs:
     env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       Application_ID: ${{ secrets.Application_ID }}
-    if: contains(needs.check.outputs.status, 'src/create.ts')
+    #if: contains(needs.check.outputs.status, 'src/create.ts')
     steps: 
+      - run: echo ${{ needs.check.outputs.status }}
       - uses: actions/checkout@master
       - uses: denoland/setup-deno@v1
       - uses: jurassiscripts/setup-velociraptor@v1
