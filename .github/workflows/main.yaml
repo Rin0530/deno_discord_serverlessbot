@@ -25,11 +25,12 @@ jobs:
       Application_ID: ${{ secrets.Application_ID }}
     #if: contains(needs.check.outputs.status, 'src/create.ts')
     steps: 
-      - run: echo ${{ needs.check.outputs }}
+      - run: echo ${{ needs }}
       - run: |
           echo "BOT_TOKEN=$BOT_TOKEN" >> env
           echo "Application_ID=$Application_ID" >> env
           ls
+          pwd
       - uses: actions/checkout@master
       - uses: denoland/setup-deno@v1
       - uses: jurassiscripts/setup-velociraptor@v1
