@@ -20,7 +20,7 @@ jobs:
     env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       Application_ID: ${{ secrets.Application_ID }}
-    if: ${{ secrets.BOT_TOKEN }} != null && ${{ secrets.Application_ID }} != null && needs.check.outputs.status
+    if: ${{ env.BOT_TOKEN }} != null && ${{ env.Application_ID }} != null && needs.check.outputs.status
     steps: 
       - uses: actions/checkout@master
       - uses: denoland/setup-deno@v1
