@@ -11,7 +11,7 @@ const headers = {
 }
 
 const body:GlobalApplicationCommand = {
-    name: "pingg",
+    name: "ping",
     description: "Response pong!",
 }
 
