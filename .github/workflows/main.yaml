@@ -27,8 +27,9 @@ jobs:
     steps: 
       - run: echo ${{ needs.check.outputs.status }}
       - run: |
-          echo "BOT_TOKEN=$BOT_TOKEN" >> env && \
+          echo "BOT_TOKEN=$BOT_TOKEN" >> env
           echo "Application_ID=$Application_ID" >> env
+          cat env
       - uses: actions/checkout@master
       - uses: denoland/setup-deno@v1
       - uses: jurassiscripts/setup-velociraptor@v1
