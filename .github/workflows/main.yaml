@@ -31,4 +31,4 @@ jobs:
       - uses: jurassiscripts/setup-velociraptor@v1
       - run: |
           vr create
-        if: env.BOT_TOKEN != null && env.Application_ID != null
+        if: ${{ secrets.BOT_TOKEN }} != null && ${{ secrets.BOT_TOKEN }} != null
