@@ -1,6 +1,7 @@
 import { ApplicationCommandInteraction, InteractionResponse } from "../../@types/index.d.ts"
 import { InteractionCallbackType } from "../../@types/types.ts"
 import { ping } from "./ping.ts"
+import { omikuji } from "./omikuji.ts";
 
 export function onApplicationCommand(interaction:ApplicationCommandInteraction){
   const data = interaction.data
@@ -13,6 +14,9 @@ export function onApplicationCommand(interaction:ApplicationCommandInteraction){
     case "ping":
       res = ping(interaction);
       break;
+    case "omikuji":
+      res = omikuji(interaction)
+      break
       
     default:
       res = {
