@@ -13,7 +13,7 @@ import {
     MessageTypes,
     StickerType,
     TextInputStyle,
- } from "./enums.d.ts"
+ } from "./types.ts"
 
 export interface Application{
     id: bigint;
@@ -47,7 +47,7 @@ export interface ApplicationCommand{
     name_localizations?: Locales;
     description: string;
     description_localizations?: Locales;
-    options?: ApplicationCommandOption;
+    options?: ApplicationCommandInteractionDataOption[];
     default_member_permissions?: string;
     dm_permission?: boolean;
     default_permission?: boolean;
@@ -55,7 +55,7 @@ export interface ApplicationCommand{
 }
 
 export interface ApplicationCommandOption{
-    type: ApplicationCommandOptionType|number;
+    type: ApplicationCommandOptionType;
     name: string;
     name_localizations?: Locales;
     description: string;
@@ -63,7 +63,7 @@ export interface ApplicationCommandOption{
     required?: boolean;
     choices?: ApplicationCommandOptionChoice[];
     options?: ApplicationCommandOption[];
-    channelTypes?: ChannelType[]|number[];
+    channelTypes?: ChannelType[];
     minvalue?: number;
     maxvalue?: number;
     autocomlete?: boolean;
@@ -77,13 +77,13 @@ export interface ApplicationCommandData{
 }
 
 export interface ApplicationCommandOptionData{
-    type: ApplicationCommandOptionType|number;
+    type: ApplicationCommandOptionType;
     name: string;
     description: string;
     autocomlete?: boolean;
     required?: boolean;
     choices?: ApplicationCommandOptionChoice[];
-    channelTypes?: ChannelType[]|number[];
+    channelTypes?: ChannelType[];
     minvalue?: number;
     maxvalue?: number;
 }
@@ -94,16 +94,11 @@ export interface ApplicationCommandOptionChoice{
     value: ApplicationCommandOptionType;
 }
 
-export interface ApplicationCommandInteractionDataOption{
-    name: string;
-    type: number;
-    value?: ApplicationCommandOptionType;
-}
 
 export interface ApplicationCommandInteractionDataOption{
     name: string;
     type: number;
-    value?: ApplicationCommandOptionType;
+    value?: string|number;
     options?: ApplicationCommandInteractionDataOption;
     focused?: boolean;
 }
@@ -112,16 +107,23 @@ export interface Interaction{
     id: bigint;
     application_id: bigint;
     type: InteractionType;
-    data?: InteractionType;
     guild_id: bigint;
     channel_id?: bigint;
     member?: Member;
     user?: User;
     token: string;
     version: string;
-    message?: Message;
     locale?: string;
     guild_locale?: string
+}
+
+export interface ApplicationCommandInteraction extends Interaction{
+    member: Member;
+    data: ApplicationCommand;
+}
+
+export interface MessageComponentInteraction extends Interaction{
+    message: Message;
 }
 
 export interface InteractionData{
@@ -157,7 +159,7 @@ export interface MessageInteraction{
 
 export interface InteractionResponse{
     type: InteractionCallbackType;
-    data?: MessageInteractionCallback|Autocomplete|Modal;
+    data?: MessageInteractionCallback;
 }
 
 export interface MessageInteractionCallback {
@@ -181,7 +183,12 @@ export interface Modal{
 }
 
 export interface MessageComponent{
-    type: number;
+    type: ComponentTypes;
+}
+
+export interface ActionRows extends MessageComponent{
+    type: ComponentTypes;
+    component: MessageComponent;
 }
 
 export interface Buttons extends MessageComponent{
@@ -202,7 +209,7 @@ export interface SelectMenu extends MessageComponent{
     disabled?: boolean;
 }
 
-export interface SelectOptions extends MessageComponent{
+export interface SelectOptions{
     label: string;
     value: string;
     description?: string;
@@ -524,3 +531,5 @@ export interface GlobalApplicationCommand{
     default_permission?: boolean;
     type?: ApplicationCommandType;
 }
+
+
