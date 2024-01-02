@@ -10,7 +10,7 @@ jobs:
           fetch-depth: 2
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v10.1
+        uses: tj-actions/changed-files@v41
       - name: Checkout
         uses: actions/checkout@v3
       - run: echo ${{ steps.changed-files.outputs.all_modified_files }}
